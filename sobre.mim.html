@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sobre Mim | Jéssica S. Veloso</title>
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* =====================================================
+           BODY
+        ===================================================== */
+
+        body {
+
+            background: #000;
+
+            color: #fff;
+
+            font-family: Georgia, "Times New Roman", serif;
+
+            min-height: 100vh;
+
+            overflow-x: hidden;
+
+        }
+
+
+        /* =====================================================
+           CONTAINER
+        ===================================================== */
+
+        .historia-container {
+
+            width: 100%;
+
+            min-height: 100vh;
+
+            padding: 0 20px 70px;
+
+            position: relative;
+
+            overflow: hidden;
+
+        }
+
+
+        /* =====================================================
+           LAÇOS / FLORES DOS CANTOS
+        ===================================================== */
+
+        .flor {
+
+            position: absolute;
+
+            width: 300px;
+
+            opacity: 0.22;
+
+            z-index: 0;
+
+            pointer-events: none;
+
+        }
+
+
+        .flor1 {
+
+            top: -80px;
+
+            left: -80px;
+
+            transform: rotate(-15deg);
+
+        }
+
+
+        .flor2 {
+
+            top: -80px;
+
+            right: -80px;
+
+            transform: scaleX(-1) rotate(-15deg);
+
+        }
+
+
+        .flor3 {
+
+            bottom: -80px;
+
+            left: -80px;
+
+            transform: rotate(180deg);
+
+        }
+
+
+        .flor4 {
+
+            bottom: -80px;
+
+            right: -80px;
+
+            transform: rotate(180deg) scaleX(-1);
+
+        }
+
+
+        /* =====================================================
+           ESTRELAS
+        ===================================================== */
+
+        .estrela {
+
+            position: absolute;
+
+            width: 40px;
+
+            opacity: 0.65;
+
+            z-index: 1;
+
+        }
+
+
+        .estrela1 {
+
+            top: 260px;
+
+            left: 8%;
+
+        }
+
+
+        .estrela2 {
+
+            top: 350px;
+
+            right: 8%;
+
+        }
+
+
+        /* =====================================================
+           LAÇOS PEQUENOS
+        ===================================================== */
+
+        .laco {
+
+            position: absolute;
+
+            width: 90px;
+
+            opacity: 0.55;
+
+            z-index: 1;
+
+        }
+
+
+        .laco1 {
+
+            top: 130px;
+
+            left: 5%;
+
+        }
+
+
+        .laco2 {
+
+            top: 130px;
+
+            right: 5%;
+
+            transform: scaleX(-1);
+
+        }
+
+
+        /* =====================================================
+           MENU
+        ===================================================== */
+
+        nav {
+
+            padding: 30px 0;
+
+            position: relative;
+
+            z-index: 5;
+
+        }
+
+
+        nav ul {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 65px;
+
+            list-style: none;
+
+            flex-wrap: wrap;
+
+        }
+
+
+        nav a {
+
+            color: white;
+
+            text-decoration: none;
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            font-size: 13px;
+
+            letter-spacing: 2px;
+
+            transition: 0.3s;
+
+        }
+
+
+        nav a:hover {
+
+            color: #aaa;
+
+        }
+
+
+        /* =====================================================
+           LINHA
+        ===================================================== */
+
+        .linha-topo {
+
+            width: 85%;
+
+            height: 1px;
+
+            background: #444;
+
+            margin: auto;
+
+            position: relative;
+
+            z-index: 3;
+
+        }
+
+
+        /* =====================================================
+           TÍTULO
+        ===================================================== */
+
+        .titulo-area {
+
+            width: 92%;
+
+            max-width: 1250px;
+
+            margin: 70px auto 55px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 30px;
+
+            position: relative;
+
+            z-index: 3;
+
+        }
+
+
+        .titulo-area .linha {
+
+            height: 1px;
+
+            background: #555;
+
+            flex: 1;
+
+        }
+
+
+        .titulo-area h1 {
+
+            font-size: 68px;
+
+            font-weight: normal;
+
+            font-style: italic;
+
+            white-space: nowrap;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        /* =====================================================
+           CARD DA HISTÓRIA
+        ===================================================== */
+
+        .card-historia {
+
+            width: 92%;
+
+            max-width: 1100px;
+
+            margin: 0 auto;
+
+            padding: 65px 85px;
+
+            background: #000000;
+
+            border: 1px solid #555;
+
+            border-radius: 35px;
+
+            position: relative;
+
+            z-index: 3;
+
+            box-shadow: 0 0 35px rgb(0, 0, 0);
+
+        }
+
+
+        /* =====================================================
+           ENFEITES DO CARD
+        ===================================================== */
+
+        .mini-enfeites {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin-bottom: 40px;
+
+        }
+
+
+        .mini-enfeites img {
+
+            width: 48px;
+
+        }
+
+
+        /* =====================================================
+           TEXTO
+        ===================================================== */
+
+        .card-historia p {
+
+            color: #d8d8d8;
+
+            font-size: 19px;
+
+            line-height: 2;
+
+            text-align: justify;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        /* =====================================================
+           FILIAÇÃO
+        ===================================================== */
+
+        .familia {
+
+            margin-top: 55px;
+
+            padding-top: 35px;
+
+            border-top: 1px solid #444;
+
+            text-align: center;
+
+        }
+
+
+        .familia h2 {
+
+            font-size: 42px;
+
+            font-weight: normal;
+
+            font-style: italic;
+
+            margin-bottom: 28px;
+
+        }
+
+
+        .familia-box {
+
+            border: 1px solid #444;
+
+            border-radius: 25px;
+
+            padding: 28px;
+
+            background: #050505;
+
+        }
+
+
+        .familia-box p {
+
+            margin: 10px 0;
+
+            text-align: center;
+
+            font-size: 17px;
+
+            line-height: 1.5;
+
+        }
+
+
+        .familia-box strong {
+
+            color: white;
+
+        }
+
+
+        /* =====================================================
+           BOTÃO
+        ===================================================== */
+
+        .voltar {
+
+            display: block;
+
+            width: fit-content;
+
+            margin: 45px auto 0;
+
+            padding: 14px 30px;
+
+            border: 1px solid #555;
+
+            border-radius: 30px;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            font-size: 12px;
+
+            letter-spacing: 2px;
+
+            transition: 0.3s;
+
+        }
+
+
+        .voltar:hover {
+
+            background: white;
+
+            color: black;
+
+            border-color: white;
+
+        }
+
+
+        /* =====================================================
+           RODAPÉ
+        ===================================================== */
+
+        footer {
+
+            text-align: center;
+
+            padding: 60px 20px 20px;
+
+            position: relative;
+
+            z-index: 3;
+
+        }
+
+
+        footer img {
+
+            width: 55px;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        footer p {
+
+            color: #888;
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            font-size: 11px;
+
+            letter-spacing: 2px;
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVO
+        ===================================================== */
+
+        @media (max-width: 900px) {
+
+            nav ul {
+
+                gap: 30px;
+
+            }
+
+
+            .titulo-area {
+
+                margin-top: 55px;
+
+            }
+
+
+            .titulo-area h1 {
+
+                font-size: 50px;
+
+            }
+
+
+            .card-historia {
+
+                padding: 50px 55px;
+
+            }
+
+
+            .card-historia p {
+
+                font-size: 17px;
+
+            }
+
+
+            .flor {
+
+                width: 220px;
+
+            }
+
+        }
+
+
+        @media (max-width: 650px) {
+
+            .historia-container {
+
+                padding-left: 12px;
+
+                padding-right: 12px;
+
+            }
+
+
+            nav ul {
+
+                gap: 22px;
+
+            }
+
+
+            nav a {
+
+                font-size: 10px;
+
+            }
+
+
+            .titulo-area {
+
+                width: 100%;
+
+                gap: 12px;
+
+                margin: 45px auto 35px;
+
+            }
+
+
+            .titulo-area h1 {
+
+                font-size: 35px;
+
+            }
+
+
+            .card-historia {
+
+                width: 100%;
+
+                padding: 35px 25px;
+
+                border-radius: 25px;
+
+            }
+
+
+            .card-historia p {
+
+                font-size: 15px;
+
+                line-height: 1.8;
+
+                text-align: left;
+
+                margin-bottom: 25px;
+
+            }
+
+
+            .familia h2 {
+
+                font-size: 32px;
+
+            }
+
+
+            .familia-box {
+
+                padding: 20px;
+
+            }
+
+
+            .familia-box p {
+
+                font-size: 14px;
+
+            }
+
+
+            .flor {
+
+                width: 170px;
+
+            }
+
+
+            .laco {
+
+                width: 65px;
+
+            }
+
+
+            .estrela {
+
+                width: 25px;
+
+            }
+
+        }
+
+
+        /* =====================================================
+           CELULAR PEQUENO
+        ===================================================== */
+
+        @media (max-width: 400px) {
+
+            .titulo-area h1 {
+
+                font-size: 28px;
+
+            }
+
+
+            .card-historia {
+
+                padding: 30px 20px;
+
+            }
+
+
+            .card-historia p {
+
+                font-size: 14px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <section class="historia-container">
+
+
+        <!-- =================================================
+             DECORAÇÕES
+        ================================================== -->
+
+        <img
+            src="img/image copy 4.png"
+            class="flor flor1"
+            alt="">
+
+
+        <img
+            src="img/image copy 4.png"
+            class="flor flor2"
+            alt="">
+
+
+        <img
+            src="img/image copy 4.png"
+            class="flor flor3"
+            alt="">
+
+
+        <img
+            src="img/image copy 4.png"
+            class="flor flor4"
+            alt="">
+
+
+        <img
+            src="img/image copy 5.png"
+            class="estrela estrela1"
+            alt="">
+
+
+        <img
+            src="img/image copy 5.png"
+            class="estrela estrela2"
+            alt="">
+
+
+        <img
+            src="img/image copy 3.png"
+            class="laco laco1"
+            alt="">
+
+
+        <img
+            src="img/image copy 3.png"
+            class="laco laco2"
+            alt="">
+
+
+
+        <!-- =================================================
+             MENU
+        ================================================== -->
+
+        <nav>
+
+            <ul>
+
+                <li>
+                    <a href="index.html">
+                        INÍCIO
+                    </a>
+                </li>
+
+                
+
+                <li>
+                    <a href="project.html">
+                        PROJETOS
+                    </a>
+                </li>
+
+                <li>
+                    <a href="ppe.html">
+                        PPE
+                    </a>
+                </li>
+
+                <li>
+                    <a href="curriculo.html">
+                        CURRÍCULO
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html">
+                        CONTATO
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+        <div class="linha-topo"></div>
+
+
+
+        <!-- =================================================
+             TÍTULO
+        ================================================== -->
+
+        <div class="titulo-area">
+
+            <span class="linha"></span>
+
+            <h1>
+                História de Vida
+            </h1>
+
+            <span class="linha"></span>
+
+        </div>
+
+
+
+        <!-- =================================================
+             HISTÓRIA
+        ================================================== -->
+
+        <div class="card-historia">
+
+
+            <!-- ENFEITES -->
+
+            <div class="mini-enfeites">
+
+                <img
+                    src="img/image copy 4.png"
+                    alt="">
+
+
+                <img
+                    src="img/image copy 4.png"
+                    alt="">
+
+
+                <img
+                    src="img/image copy 4.png"
+                    alt="">
+
+            </div>
+
+
+
+            <!-- TEXTO -->
+
+            <p>
+                Sou uma jovem dedicada, responsável e determinada,
+                que valoriza muito a educação e o esforço pessoal.
+                Desde cedo aprendi a importância da disciplina,
+                do respeito e do compromisso com meus objetivos,
+                princípios que levo comigo tanto na minha vida pessoal
+                quanto na escolar.
+            </p>
+
+
+            <p>
+                Atualmente, estou na terceira série do ensino médio
+                em parceria com o SENAI, cursando Técnico em Informática
+                para a Internet.
+            </p>
+
+
+            <p>
+                Essa experiência tem sido muito importante para o meu
+                crescimento, pois me permite desenvolver habilidades
+                técnicas, aprender a trabalhar em equipe e me preparar
+                para o mercado de trabalho.
+            </p>
+
+
+            <p>
+                Tenho metas bem definidas: concluir o ensino médio
+                com sucesso, alcançar um bom desempenho no ENEM e
+                ingressar na graduação para exercer a profissão que desejo.
+            </p>
+
+
+            <p>
+                Sou persistente, sonhadora e comprometida com meu futuro,
+                e busco todos os dias evoluir como estudante e como pessoa.
+            </p>
+
+
+
+            <!-- =================================================
+                 FILIAÇÃO
+            ================================================== -->
+
+            <div class="familia">
+
+                <h2>
+                    Filiação
+                </h2>
+
+
+                <div class="familia-box">
+
+                    <p>
+                        <strong>Mãe:</strong>
+                        Maria Valtânia da Silva
+                    </p>
+
+
+                    <p>
+                        <strong>Pai:</strong>
+                        José Agostinho Veloso Filho
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 BOTÃO
+            ================================================== -->
+
+            <a
+                href="index.html"
+                class="voltar">
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                &nbsp; VOLTAR AO INÍCIO
+
+            </a>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             RODAPÉ
+        ================================================== -->
+
+        <footer>
+
+            <img
+                src="img/image copy 2.png"
+                alt="Laço">
+
+
+            <p>
+                PORTFÓLIO • JÉSSICA S. VELOSO
+            </p>
+
+        </footer>
+
+
+    </section>
+
+
+</body>
+
+</html>

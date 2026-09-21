@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PPE | Planejamento Semanal</title>
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* =====================================================
+           BODY
+        ===================================================== */
+
+        body {
+
+            background: #000;
+
+            color: #fff;
+
+            font-family: Georgia, "Times New Roman", serif;
+
+            min-height: 100vh;
+
+            overflow-x: hidden;
+
+            position: relative;
+
+        }
+
+
+        /* =====================================================
+           LAÇOS DECORATIVOS
+        ===================================================== */
+
+        .laco {
+
+            position: fixed;
+
+            width: 280px;
+
+            opacity: 0.22;
+
+            z-index: 0;
+
+            pointer-events: none;
+
+        }
+
+
+        .laco-1 {
+
+            top: -60px;
+
+            left: -60px;
+
+            transform: rotate(-15deg);
+
+        }
+
+
+        .laco-2 {
+
+            top: -60px;
+
+            right: -60px;
+
+            transform: rotate(15deg);
+
+        }
+
+
+        .laco-3 {
+
+            bottom: -70px;
+
+            left: -60px;
+
+            transform: rotate(15deg);
+
+        }
+
+
+        .laco-4 {
+
+            bottom: -70px;
+
+            right: -60px;
+
+            transform: rotate(-15deg);
+
+        }
+
+
+        /* =====================================================
+           CONTAINER
+        ===================================================== */
+
+        .pagina {
+
+            width: 94%;
+
+            max-width: 1450px;
+
+            margin: 0 auto;
+
+            position: relative;
+
+            z-index: 1;
+
+        }
+
+
+        /* =====================================================
+           MENU
+        ===================================================== */
+
+        nav {
+
+            padding: 28px 0 20px;
+
+            text-align: center;
+
+        }
+
+
+        nav ul {
+
+            list-style: none;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 65px;
+
+        }
+
+
+        nav a {
+
+            color: #fff;
+
+            text-decoration: none;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 13px;
+
+            letter-spacing: 2px;
+
+            transition: 0.3s;
+
+        }
+
+
+        nav a:hover {
+
+            color: #aaa;
+
+        }
+
+
+        /* =====================================================
+           LINHA
+        ===================================================== */
+
+        .linha {
+
+            width: 90%;
+
+            height: 1px;
+
+            background: #444;
+
+            margin: 0 auto;
+
+        }
+
+
+        /* =====================================================
+           CABEÇALHO
+        ===================================================== */
+
+        header {
+
+            text-align: center;
+
+            padding: 45px 20px 35px;
+
+        }
+
+
+        .mini-laco {
+
+            width: 65px;
+
+            margin-bottom: 12px;
+
+            opacity: 0.9;
+
+        }
+
+
+        header h1 {
+
+            font-size: 58px;
+
+            font-weight: normal;
+
+            font-style: italic;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        header p {
+
+            font-family: Arial, sans-serif;
+
+            font-size: 13px;
+
+            color: #cfcfcf;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+        }
+
+
+        /* =====================================================
+           SEMANA
+        ===================================================== */
+
+        .semana {
+
+            margin: 20px auto 70px;
+
+            width: 100%;
+
+        }
+
+
+        /* =====================================================
+           CABEÇALHO DOS DIAS
+        ===================================================== */
+
+        .dias {
+
+            display: grid;
+
+            grid-template-columns: 90px repeat(7, 1fr);
+
+            gap: 4px;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .espaco-vazio {
+
+            height: 48px;
+
+        }
+
+
+        .dia {
+
+            background: #fff;
+
+            color: #111;
+
+            border: 1px solid #aaa;
+
+            border-radius: 16px;
+
+            height: 48px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-family: Arial, sans-serif;
+
+            font-weight: bold;
+
+            font-size: 14px;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        /* =====================================================
+           LINHAS DO PLANEJAMENTO
+        ===================================================== */
+
+        .linha-planejamento {
+
+            display: grid;
+
+            grid-template-columns: 90px repeat(7, 1fr);
+
+            gap: 4px;
+
+            margin-bottom: 4px;
+
+        }
+
+
+        /* =====================================================
+           PERÍODO
+        ===================================================== */
+
+        .periodo {
+
+            background: #fff;
+
+            color: #111;
+
+            border-radius: 16px;
+
+            border: 1px solid #aaa;
+
+            min-height: 135px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 11px;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+
+            writing-mode: vertical-rl;
+
+            transform: rotate(180deg);
+
+            text-transform: uppercase;
+
+        }
+
+
+        /* =====================================================
+           CÉLULAS
+        ===================================================== */
+
+        .atividade {
+
+            min-height: 135px;
+
+            background: #080808;
+
+            border: 1px solid #555;
+
+            border-radius: 18px;
+
+            padding: 14px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            transition: 0.3s;
+
+            position: relative;
+
+        }
+
+
+        .atividade:hover {
+
+            border-color: #fff;
+
+            transform: translateY(-3px);
+
+        }
+
+
+        .atividade span {
+
+            font-family: Georgia, serif;
+
+            color: #d7d7d7;
+
+            font-size: 15px;
+
+            line-height: 1.4;
+
+        }
+
+
+        /* =====================================================
+           ÍCONE DENTRO DAS ATIVIDADES
+        ===================================================== */
+
+        .atividade i {
+
+            display: block;
+
+            font-size: 13px;
+
+            margin-bottom: 7px;
+
+            color: #aaa;
+
+        }
+
+
+        /* =====================================================
+           TÍTULO DOS PERÍODOS
+        ===================================================== */
+
+        .manha {
+
+            background: #fff;
+
+        }
+
+
+        .tarde {
+
+            background: #fff;
+
+        }
+
+
+        .noite {
+
+            background: #fff;
+
+        }
+
+
+        /* =====================================================
+           ÁREA INFERIOR
+        ===================================================== */
+
+        .observacoes {
+
+            width: 90%;
+
+            max-width: 900px;
+
+            margin: 0 auto 70px;
+
+            border: 1px solid #444;
+
+            border-radius: 25px;
+
+            padding: 30px;
+
+            background: #080808;
+
+            text-align: center;
+
+        }
+
+
+        .observacoes .laco-pequeno {
+
+            width: 50px;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .observacoes h2 {
+
+            font-size: 28px;
+
+            font-weight: normal;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .observacoes p {
+
+            font-family: Arial, sans-serif;
+
+            color: #bbb;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+
+            border-top: 1px solid #444;
+
+            text-align: center;
+
+            padding: 40px 20px;
+
+            margin-top: 20px;
+
+        }
+
+
+        footer img {
+
+            width: 55px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        footer p {
+
+            font-family: Arial, sans-serif;
+
+            color: #aaa;
+
+            font-size: 12px;
+
+            letter-spacing: 2px;
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVO
+        ===================================================== */
+
+        @media (max-width: 1000px) {
+
+            .dias,
+            .linha-planejamento {
+
+                grid-template-columns: 65px repeat(7, 150px);
+
+            }
+
+
+            .semana {
+
+                overflow-x: auto;
+
+                padding-bottom: 15px;
+
+            }
+
+
+            .dias,
+            .linha-planejamento {
+
+                width: 1115px;
+
+            }
+
+        }
+
+
+        @media (max-width: 700px) {
+
+            nav ul {
+
+                gap: 25px;
+
+                flex-wrap: wrap;
+
+            }
+
+
+            nav a {
+
+                font-size: 10px;
+
+            }
+
+
+            header h1 {
+
+                font-size: 40px;
+
+            }
+
+
+            header p {
+
+                font-size: 10px;
+
+                letter-spacing: 2px;
+
+            }
+
+
+            .observacoes {
+
+                width: 100%;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         LAÇOS DOS CANTOS
+    ====================================================== -->
+
+    <img
+        src="img/image copy 4.png"
+        class="laco laco-1"
+        alt="Laço decorativo">
+
+
+    <img
+        src="img/image copy 4.png"
+        class="laco laco-2"
+        alt="Laço decorativo">
+
+
+    <img
+        src="img/image copy 4.png"
+        class="laco laco-3"
+        alt="Laço decorativo">
+
+
+    <img
+        src="img/image copy 4.png"
+        class="laco laco-4"
+        alt="Laço decorativo">
+
+
+
+    <div class="pagina">
+
+
+        <!-- =================================================
+             MENU
+        ================================================== -->
+
+        <nav>
+
+            <ul>
+
+                <li>
+                    <a href="index.html">
+                        INÍCIO
+                    </a>
+                </li>
+
+                <li>
+                    <a href="sobre.mim.html">
+                        SOBRE MIM
+                    </a>
+                </li>
+
+                <li>
+                    <a href="project.html">
+                        PROJETOS
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html">
+                        CONTATO
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+        <div class="linha"></div>
+
+
+
+        <!-- =================================================
+             CABEÇALHO
+        ================================================== -->
+
+        <header>
+
+            <img
+                src="img/image copy 2.png"
+                class="mini-laco"
+                alt="Laço">
+
+
+            <h1>
+                Planejamento Semanal
+            </h1>
+
+
+            <p>
+                PPE • Organização e rotina
+            </p>
+
+        </header>
+
+
+
+        <!-- =================================================
+             PLANEJAMENTO
+        ================================================== -->
+
+        <main class="semana">
+
+
+            <!-- DIAS -->
+
+            <div class="dias">
+
+                <div class="espaco-vazio"></div>
+
+
+                <div class="dia">
+                    SEGUNDA - FEIRA
+                </div>
+
+
+                <div class="dia">
+                    TERÇA - FEIRA
+                </div>
+
+
+                <div class="dia">
+                    QUARTA - FEIRA
+                </div>
+
+
+                <div class="dia">
+                    QUINTA - FEIRA
+                </div>
+
+
+                <div class="dia">
+                    SEXTA - FEIRA
+                </div>
+
+
+                <div class="dia">
+                    SÁBADO
+                </div>
+
+
+                <div class="dia">
+                    DOMINGO
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 MANHÃ
+            ================================================== -->
+
+            <div class="linha-planejamento">
+
+
+                <div class="periodo manha">
+                    MANHÃ
+                </div>
+
+
+                <div class="atividade">
+                    <span>
+                        <i class="fa-solid fa-house"></i>
+                        Tarefas de casa e Estudos
+                    </span>
+                </div>
+
+
+                <div class="atividade">
+                    <span>
+                       <i class="fa-solid fa-house"></i>
+                        Tarefas de casa e Estudos
+                    </span>
+                </div>
+
+
+                <div class="atividade">
+                    <span>
+                        <i class="fa-solid fa-house"></i>
+                       Tarefas de casa e Estudos
+                    </span>
+                </div>
+
+
+                <div class="atividade">
+                    <span>
+                        <i class="fa-solid fa-house"></i>
+                        Tarefas de casa e Estudos
+                    </span>
+                </div>
+
+
+                <div class="atividade">
+                    <span>
+                        <i class="fa-solid fa-house"></i>
+                        Tarefas de casa e Estudos
+                    </span>
+                </div>
+
+
+                <div class="atividade">
+                    <span>
+                       <i class="fa-solid fa-house"></i>
+                        Casa
+                    </span>
+                </div>
+
+
+                <div class="atividade">
+                    <span>
+                        <i class="fa-solid fa-house"></i>
+                        Casa
+                    </span>
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 TARDE
+            ================================================== -->
+
+            <div class="linha-planejamento">
+
+
+                <div class="periodo tarde">
+                    TARDE
+                </div>
+
+
+                <div class="atividade">
+                    <span>
+                        <i class="fa-solid fa-school"></i>
+                        Sesi/Senai
+                    </span>
+                </div>
+
+
+                <div class="atividade">
+                    <span>
+                        <i class="fa-solid fa-school"></i>
+                        Sesi/Senai
+                    </span>
+                </div>
+
+
+                <div class="atividade">
+                    <span>
+                        <i class="fa-solid fa-school"></i>
+                        Sesi/Senai
+                    </span>
+                </div>
+
+
+                <div class="atividade">
+                    <span>
+                        <i class="fa-solid fa-school"></i>
+                        Sesi/Senai
+                    </span>
+                </div>
+
+
+                <div class="atividade">
+                    <span>
+                        <i class="fa-solid fa-school"></i>
+                        Senai
+                    </span>
+                </div>
+
+
+                <div class="atividade">
+                    <span>
+                        <i class="fa-solid fa-palette"></i>
+                        Gráfica
+                    </span>
+                </div>
+
+
+                <div class="atividade">
+                    <span>
+                        <i class="fa-solid fa-house"></i>
+                        Casa
+                    </span>
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 NOITE
+            ================================================== -->
+
+            <div class="linha-planejamento">
+
+
+                <div class="periodo noite">
+                    NOITE
+                </div>
+
+
+                <div class="atividade">
+                    <span>
+                        <i class="fa-solid fa-house"></i>
+                        Curso
+                    </span>
+                </div>
+
+
+                <div class="atividade">
+                    <span>
+                        <i class="fa-solid fa-school"></i>
+                        Curso ou Sesi
+                    </span>
+                </div>
+
+
+                <div class="atividade">
+                    <span>
+                        <i class="fa-solid fa-school"></i>
+                        Curso ou Sesi
+                    </span>
+                </div>
+
+
+                <div class="atividade">
+                    <span>
+                        <i class="fa-solid fa-school"></i>
+                        Curso ou Senai
+                    </span>
+                </div>
+
+
+                <div class="atividade">
+                    <span>
+                        <i class="fa-solid fa-house"></i>
+                        Casa
+                    </span>
+                </div>
+
+
+                <div class="atividade">
+                    <span>
+                        <i class="fa-solid fa-house"></i>
+                        Casa
+                    </span>
+                </div>
+
+
+                <div class="atividade">
+                    <span>
+                        <i class="fa-solid fa-church"></i>
+                        Igreja
+                    </span>
+                </div>
+
+            </div>
+
+        </main>
+
+
+
+        <!-- =================================================
+             OBSERVAÇÕES
+        ================================================== -->
+
+       
+        <footer>
+
+
+            <img
+                src="img/image copy 2.png"
+                alt="Laço">
+
+
+            <p>
+                PORTFÓLIO • JÉSSICA S. VELOSO
+            </p>
+
+
+        </footer>
+
+
+    </div>
+
+
+</body>
+
+</html>

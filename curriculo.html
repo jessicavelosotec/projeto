@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Currículo | Jéssica da Silva Veloso</title>
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* =====================================================
+           BODY
+        ===================================================== */
+
+        body {
+
+            background: #000;
+
+            color: #fff;
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            min-height: 100vh;
+
+            padding: 40px 20px;
+
+            overflow-x: hidden;
+
+            position: relative;
+
+        }
+
+
+        /* =====================================================
+           LAÇOS DECORATIVOS
+        ===================================================== */
+
+        .laco {
+
+            position: fixed;
+
+            width: 270px;
+
+            opacity: 0.18;
+
+            z-index: 0;
+
+            pointer-events: none;
+
+        }
+
+
+        .laco1 {
+
+            top: -65px;
+
+            left: -65px;
+
+        }
+
+
+        .laco2 {
+
+            top: -65px;
+
+            right: -65px;
+
+            transform: scaleX(-1);
+
+        }
+
+
+        .laco3 {
+
+            bottom: -65px;
+
+            left: -65px;
+
+            transform: rotate(180deg);
+
+        }
+
+
+        .laco4 {
+
+            bottom: -65px;
+
+            right: -65px;
+
+            transform: rotate(180deg) scaleX(-1);
+
+        }
+
+
+        /* =====================================================
+           CONTAINER PRINCIPAL
+        ===================================================== */
+
+        .pagina {
+
+            position: relative;
+
+            z-index: 1;
+
+            width: 100%;
+
+            max-width: 1000px;
+
+            margin: auto;
+
+        }
+
+
+        /* =====================================================
+           MENU
+        ===================================================== */
+
+        nav {
+
+            width: 100%;
+
+            padding: 5px 0 25px;
+
+            text-align: center;
+
+        }
+
+
+        nav ul {
+
+            list-style: none;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 65px;
+
+            flex-wrap: wrap;
+
+        }
+
+
+        nav a {
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 13px;
+
+            letter-spacing: 2px;
+
+            transition: 0.3s;
+
+        }
+
+
+        nav a:hover {
+
+            color: #aaa;
+
+        }
+
+
+        /* =====================================================
+           LINHA
+        ===================================================== */
+
+        .linha {
+
+            width: 90%;
+
+            height: 1px;
+
+            background: #444;
+
+            margin: auto;
+
+        }
+
+
+        /* =====================================================
+           TÍTULO DA PÁGINA
+        ===================================================== */
+
+        .titulo-pagina {
+
+            text-align: center;
+
+            padding: 40px 20px 30px;
+
+        }
+
+
+        .titulo-pagina img {
+
+            width: 65px;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .titulo-pagina h2 {
+
+            font-family: Georgia, "Times New Roman", serif;
+
+            font-size: 48px;
+
+            font-weight: normal;
+
+            font-style: italic;
+
+        }
+
+
+        .titulo-pagina p {
+
+            margin-top: 10px;
+
+            color: #aaa;
+
+            font-size: 12px;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+        }
+
+
+        /* =====================================================
+           CURRÍCULO
+        ===================================================== */
+
+        .curriculo {
+
+            position: relative;
+
+            width: 210mm;
+
+            min-height: 297mm;
+
+            max-width: 100%;
+
+            margin: 30px auto 70px;
+
+            background: #f5f5f5;
+
+            color: #3b3b3b;
+
+            border: 2px solid #777;
+
+            padding: 38px 42px;
+
+            box-shadow:
+                0 0 0 8px #000,
+                0 0 0 9px #555;
+
+        }
+
+
+        /* =====================================================
+           BORDA INTERNA
+        ===================================================== */
+
+        .curriculo::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 10px;
+
+            left: 10px;
+
+            right: 10px;
+
+            bottom: 10px;
+
+            border: 1px solid #d0d0d0;
+
+            pointer-events: none;
+
+        }
+
+
+        /* =====================================================
+           CABEÇALHO DO CURRÍCULO
+        ===================================================== */
+
+        .curriculo-header {
+
+            position: relative;
+
+            z-index: 2;
+
+            margin-bottom: 22px;
+
+        }
+
+
+        .nome {
+
+            font-family: Georgia, "Times New Roman", serif;
+
+            font-size: 32px;
+
+            font-weight: normal;
+
+            text-align: center;
+
+            color: #353535;
+
+            margin-bottom: 24px;
+
+        }
+
+
+        /* =====================================================
+           INFORMAÇÕES PESSOAIS
+        ===================================================== */
+
+        .dados {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 10px;
+
+        }
+
+
+        .dado {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 7px;
+
+            font-size: 9px;
+
+            font-weight: bold;
+
+            color: #444;
+
+        }
+
+
+        .dado i {
+
+            width: 18px;
+
+            height: 18px;
+
+            min-width: 18px;
+
+            background: #444;
+
+            color: white;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 9px;
+
+        }
+
+
+        /* =====================================================
+           SEÇÕES
+        ===================================================== */
+
+        .secao {
+
+            position: relative;
+
+            z-index: 2;
+
+            margin-top: 18px;
+
+        }
+
+
+        /* =====================================================
+           TÍTULO DA SEÇÃO
+        ===================================================== */
+
+        .titulo-secao {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 5px;
+
+            margin-bottom: 7px;
+
+        }
+
+
+        .seta {
+
+            font-size: 25px;
+
+            font-weight: bold;
+
+            line-height: 10px;
+
+            color: #444;
+
+        }
+
+
+        .titulo-secao h3 {
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            color: #3d3d3d;
+
+            white-space: nowrap;
+
+        }
+
+
+        .pontilhado {
+
+            flex: 1;
+
+            border-top: 2px dotted #777;
+
+            margin-left: 10px;
+
+            margin-top: 4px;
+
+        }
+
+
+        /* =====================================================
+           TEXTO
+        ===================================================== */
+
+        .secao p {
+
+            font-size: 9px;
+
+            line-height: 1.4;
+
+            text-align: justify;
+
+            color: #414141;
+
+        }
+
+
+        /* =====================================================
+           FORMAÇÃO
+        ===================================================== */
+
+        .formacao p {
+
+            text-align: left;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        /* =====================================================
+           LISTAS
+        ===================================================== */
+
+        .secao ul {
+
+            padding-left: 17px;
+
+        }
+
+
+        .secao li {
+
+            font-size: 9px;
+
+            line-height: 1.35;
+
+            color: #414141;
+
+            margin-bottom: 2px;
+
+        }
+
+
+        /* =====================================================
+           DESTAQUE DAS EXPERIÊNCIAS
+        ===================================================== */
+
+        .experiencias li {
+
+            list-style-type: disc;
+
+        }
+
+
+        /* =====================================================
+           LAÇO PEQUENO NO FINAL
+        ===================================================== */
+
+        .detalhe-final {
+
+            display: block;
+
+            width: 50px;
+
+            margin: 25px auto 0;
+
+            opacity: 0.8;
+
+        }
+
+
+        /* =====================================================
+           RODAPÉ DA PÁGINA
+        ===================================================== */
+
+        footer {
+
+            text-align: center;
+
+            padding: 0 20px 40px;
+
+        }
+
+
+        footer img {
+
+            width: 55px;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        footer p {
+
+            color: #888;
+
+            font-size: 11px;
+
+            letter-spacing: 2px;
+
+        }
+
+
+        /* =====================================================
+           IMPRESSÃO
+        ===================================================== */
+
+        @media print {
+
+            @page {
+
+                size: A4;
+
+                margin: 0;
+
+            }
+
+
+            body {
+
+                background: white;
+
+                padding: 0;
+
+            }
+
+
+            .laco,
+            nav,
+            .linha,
+            .titulo-pagina,
+            footer {
+
+                display: none;
+
+            }
+
+
+            .curriculo {
+
+                width: 210mm;
+
+                min-height: 297mm;
+
+                margin: 0;
+
+                box-shadow: none;
+
+                border: 1px solid #777;
+
+            }
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVO
+        ===================================================== */
+
+        @media (max-width: 800px) {
+
+            body {
+
+                padding: 20px 10px;
+
+            }
+
+
+            nav ul {
+
+                gap: 25px;
+
+            }
+
+
+            .titulo-pagina h2 {
+
+                font-size: 38px;
+
+            }
+
+
+            .curriculo {
+
+                width: 100%;
+
+                padding: 30px 25px;
+
+                box-shadow: none;
+
+            }
+
+
+            .nome {
+
+                font-size: 27px;
+
+            }
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            .titulo-pagina h2 {
+
+                font-size: 30px;
+
+            }
+
+
+            .titulo-pagina p {
+
+                font-size: 9px;
+
+            }
+
+
+            .curriculo {
+
+                padding: 25px 20px;
+
+            }
+
+
+            .nome {
+
+                font-size: 22px;
+
+            }
+
+
+            .dado {
+
+                font-size: 8px;
+
+            }
+
+
+            .titulo-secao h3 {
+
+                font-size: 11px;
+
+            }
+
+
+            .pontilhado {
+
+                margin-left: 5px;
+
+            }
+
+
+            .secao p,
+            .secao li {
+
+                font-size: 8px;
+
+            }
+
+
+            .laco {
+
+                width: 160px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         LAÇOS DOS CANTOS
+    ====================================================== -->
+
+    <img
+        src="img/image copy 4.png"
+        class="laco laco1"
+        alt="">
+
+
+    <img
+        src="img/image copy 4.png"
+        class="laco laco2"
+        alt="">
+
+
+    <img
+        src="img/image copy 4.png"
+        class="laco laco3"
+        alt="">
+
+
+    <img
+        src="img/image copy 4.png"
+        class="laco laco4"
+        alt="">
+
+
+
+    <div class="pagina">
+
+
+        <!-- =================================================
+             MENU
+        ================================================== -->
+
+        <nav>
+
+            <ul>
+
+                <li>
+                    <a href="index.html">
+                        INÍCIO
+                    </a>
+                </li>
+
+                <li>
+                    <a href="sobre.mim.html">
+                        SOBRE MIM
+                    </a>
+                </li>
+
+                <li>
+                    <a href="project.html">
+                        PROJETOS
+                    </a>
+                </li>
+
+                <li>
+                    <a href="ppe.html">
+                        PPE
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html">
+                        CONTATO
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+        <div class="linha"></div>
+
+
+
+        <!-- =================================================
+             TÍTULO
+        ================================================== -->
+
+        <div class="titulo-pagina">
+
+            <img
+                src="img/image copy 2.png"
+                alt="Laço">
+
+
+            <h2>
+                Meu Currículo
+            </h2>
+
+
+            <p>
+                Jéssica da Silva Veloso
+            </p>
+
+        </div>
+
+
+
+        <!-- =================================================
+             CURRÍCULO
+        ================================================== -->
+
+        <main class="curriculo">
+
+
+            <!-- CABEÇALHO -->
+
+            <header class="curriculo-header">
+
+
+                <h1 class="nome">
+                    JÉSSICA DA SILVA VELOSO
+                </h1>
+
+
+                <div class="dados">
+
+
+                    <div class="dado">
+
+                        <i class="fa-solid fa-phone"></i>
+
+                        <span>
+                            (89) 99915 - 4705
+                        </span>
+
+                    </div>
+
+
+                    <div class="dado">
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        <span>
+                            R. LUZIA OLIVEIRA SANTOS - PICOS, PIAUÍ, BRASIL
+                        </span>
+
+                    </div>
+
+
+                    <div class="dado">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <span>
+                            JESSICA.SVELOSO@GMAIL.COM
+                        </span>
+
+                    </div>
+
+
+                    <div class="dado">
+
+                        <i class="fa-solid fa-globe"></i>
+
+                        <span>
+                            BRASILEIRA, SOLTEIRA, 18 ANOS.
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =================================================
+                 OBJETIVOS
+            ================================================== -->
+
+            <section class="secao">
+
+
+                <div class="titulo-secao">
+
+                    <span class="seta">›</span>
+
+                    <h3>
+                        OBJETIVOS
+                    </h3>
+
+                    <div class="pontilhado"></div>
+
+                </div>
+
+
+                <p>
+
+                    Olá! Sou Jéssica Veloso, 18 anos, busco continuamente
+                    aprimorar meus conhecimentos e habilidades, contribuindo
+                    para meu crescimento acadêmico e profissional. Meu
+                    objetivo é aproveitar cada oportunidade de aprendizado
+                    para desenvolver competências que me preparem para os
+                    desafios do futuro, seja no ambiente universitário, seja
+                    na minha futura carreira. Almejo participar de projetos
+                    e experiências que permitam aplicar meus conhecimentos
+                    de maneira prática e impactar positivamente a sociedade.
+
+                </p>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 FORMAÇÃO ACADÊMICA
+            ================================================== -->
+
+            <section class="secao formacao">
+
+
+                <div class="titulo-secao">
+
+                    <span class="seta">›</span>
+
+                    <h3>
+                        FORMAÇÃO ACADÊMICA
+                    </h3>
+
+                    <div class="pontilhado"></div>
+
+                </div>
+
+
+                <p>
+                    Curso Técnico em Informática para Internet
+                    SENAI CFP Cândido Athayde.
+                </p>
+
+
+                <p>
+                    3 série Ensino Médio em andamento:
+                    Sesi Wilma Catão Araújo - Picos, Piauí.
+                </p>
+
+
+                <p>
+                    Certificado de provas de externas -
+                    OBA, OBMEP, OBR, BRASIL.
+                </p>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 EXPERIÊNCIAS ACADÊMICAS
+            ================================================== -->
+
+            <section class="secao experiencias">
+
+
+                <div class="titulo-secao">
+
+                    <span class="seta">›</span>
+
+                    <h3>
+                        EXPERIÊNCIAS ACADÊMICAS
+                    </h3>
+
+                    <div class="pontilhado"></div>
+
+                </div>
+
+
+                <ul>
+
+
+                    <li>
+                        II MOSTRA CIENTÍFICA - COMO A TECNOLOGIA
+                        PODE AUXILIAR NO APRENDIZADO.
+                    </li>
+
+
+                    <li>
+                        III MOSTRA CIENTÍFICA - SUSTENTABILIDADE
+                        NAS CIDADES DO FUTURO.
+                    </li>
+
+
+                    <li>
+                        IV MOSTRA CIENTÍFICA - ESCOLA: AMBIENTE
+                        EDUCACIONAL QUE ACOLHE, PROTEGE E
+                        IMPULSIONA A APRENDIZAGEM.
+                    </li>
+
+
+                    <li>
+                        V MOSTRA CIENTÍFICA SESI: IDEIAS INOVADORAS
+                        PARA UMA INDÚSTRIA SUSTENTÁVEL.
+                    </li>
+
+
+                </ul>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 HABILIDADES E COMPETÊNCIAS
+            ================================================== -->
+
+            <section class="secao">
+
+
+                <div class="titulo-secao">
+
+                    <span class="seta">›</span>
+
+                    <h3>
+                        HABILIDADES E COMPETÊNCIAS
+                    </h3>
+
+                    <div class="pontilhado"></div>
+
+                </div>
+
+
+                <ul>
+
+
+                    <li>
+                        Habilidade para trabalhar em equipe e
+                        colaborar com diferentes perfis.
+                    </li>
+
+
+                    <li>
+                        Capacidade de ouvir e respeitar diferentes
+                        opiniões.
+                    </li>
+
+
+                    <li>
+                        Organização e gestão eficiente do tempo.
+                    </li>
+
+
+                    <li>
+                        Habilidade para pesquisar e utilizar
+                        ferramentas tecnológicas no aprendizado.
+                    </li>
+
+
+                    <li>
+                        Flexibilidade para se adaptar a diferentes
+                        situações.
+                    </li>
+
+
+                    <li>
+                        Empatia e respeito no convívio social.
+                    </li>
+
+
+                    <li>
+                        Interesse pelo aprendizado contínuo e
+                        novos desafios.
+                    </li>
+
+
+                </ul>
+
+
+            </section>
+
+
+
+          
+
+        </main>
+
+
+
+        <!-- =================================================
+             RODAPÉ
+        ================================================== -->
+
+        <footer>
+
+            <img
+                src="img/image copy 2.png"
+                alt="Laço">
+
+
+            <p>
+                PORTFÓLIO • JÉSSICA S. VELOSO
+            </p>
+
+        </footer>
+
+
+    </div>
+
+
+</body>
+
+</html>

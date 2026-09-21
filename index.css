@@ -1,0 +1,188 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* FUNDO DA TELA */
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    background-image: url("img/Captura de tela 2026-09-20 230540.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    overflow: hidden;
+}
+
+
+/* CARTÃO DE LOGIN */
+
+.card {
+    width: 410px;
+    max-width: 90%;
+
+    padding: 45px 40px;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.35);
+
+    animation: entrada 0.8s ease;
+}
+
+
+/* TÍTULO */
+
+.card h2 {
+    text-align: center;
+
+    margin-bottom: 35px;
+
+    color: #000000;
+
+    font-size: 32px;
+
+    font-weight: bold;
+}
+
+
+/* LABELS */
+
+.card label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #000000;
+
+    font-size: 16px;
+
+    font-weight: bold;
+}
+
+
+/* CAMPOS */
+
+.card input {
+    width: 100%;
+
+    padding: 14px 16px;
+
+    margin-bottom: 22px;
+
+    border: 1px solid #d8b8bf;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    font-size: 15px;
+
+    font-family: Arial, sans-serif;
+
+    background: #fff;
+
+    transition: 0.3s;
+}
+
+
+/* QUANDO CLICAR NO CAMPO */
+
+.card input:focus {
+    border-color: #000000;
+
+    box-shadow:
+        0 0 0 3px rgba(114, 0, 25, 0.12);
+}
+
+
+/* BOTÃO */
+
+.card button {
+    width: 100%;
+
+    padding: 14px;
+
+    margin-top: 5px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #000000;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+/* EFEITO DO BOTÃO */
+
+.card button:hover {
+    background: #000000;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 18px rgba(0, 0, 0, 0.3);
+}
+
+
+.card button:active {
+    transform: translateY(0);
+}
+
+
+/* ANIMAÇÃO */
+
+@keyframes entrada {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+    .card {
+        padding: 35px 25px;
+    }
+
+    .card h2 {
+        font-size: 28px;
+    }
+
+}

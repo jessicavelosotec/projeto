@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Trajetória Acadêmica | Jéssica S. Veloso</title>
+
+
+    <!-- FONT AWESOME -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* =====================================================
+           BODY
+        ===================================================== */
+
+        body {
+
+            background: #000;
+
+            color: white;
+
+            font-family: Georgia, "Times New Roman", serif;
+
+            min-height: 100vh;
+
+            overflow-x: hidden;
+
+        }
+
+
+        /* =====================================================
+           CONTAINER
+        ===================================================== */
+
+        .academico-container {
+
+            width: 100%;
+
+            min-height: 100vh;
+
+            padding: 0 20px 80px;
+
+            position: relative;
+
+            overflow: hidden;
+
+        }
+
+
+        /* =====================================================
+           FLORES / ENFEITES
+        ===================================================== */
+
+        .flor {
+
+            position: absolute;
+
+            width: 300px;
+
+            opacity: 0.20;
+
+            z-index: 0;
+
+            pointer-events: none;
+
+        }
+
+
+        .flor1 {
+
+            top: -80px;
+
+            left: -80px;
+
+            transform: rotate(-15deg);
+
+        }
+
+
+        .flor2 {
+
+            top: -80px;
+
+            right: -80px;
+
+            transform: scaleX(-1);
+
+        }
+
+
+        .flor3 {
+
+            bottom: -80px;
+
+            left: -80px;
+
+            transform: rotate(180deg);
+
+        }
+
+
+        .flor4 {
+
+            bottom: -80px;
+
+            right: -80px;
+
+            transform: rotate(180deg) scaleX(-1);
+
+        }
+
+
+        /* =====================================================
+           ESTRELAS
+        ===================================================== */
+
+        .estrela {
+
+            position: absolute;
+
+            width: 40px;
+
+            opacity: 0.65;
+
+            z-index: 1;
+
+        }
+
+
+        .estrela1 {
+
+            top: 250px;
+
+            left: 8%;
+
+        }
+
+
+        .estrela2 {
+
+            top: 350px;
+
+            right: 8%;
+
+        }
+
+
+        /* =====================================================
+           LAÇOS
+        ===================================================== */
+
+        .laco {
+
+            position: absolute;
+
+            width: 90px;
+
+            opacity: 0.55;
+
+            z-index: 1;
+
+        }
+
+
+        .laco1 {
+
+            top: 130px;
+
+            left: 5%;
+
+        }
+
+
+        .laco2 {
+
+            top: 130px;
+
+            right: 5%;
+
+            transform: scaleX(-1);
+
+        }
+
+
+        /* =====================================================
+           MENU
+        ===================================================== */
+
+        nav {
+
+            padding: 30px 0;
+
+            position: relative;
+
+            z-index: 5;
+
+        }
+
+
+        nav ul {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 65px;
+
+            list-style: none;
+
+            flex-wrap: wrap;
+
+        }
+
+
+        nav a {
+
+            color: white;
+
+            text-decoration: none;
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            font-size: 13px;
+
+            letter-spacing: 2px;
+
+            transition: 0.3s;
+
+        }
+
+
+        nav a:hover {
+
+            color: #aaa;
+
+        }
+
+
+        /* =====================================================
+           LINHA
+        ===================================================== */
+
+        .linha-topo {
+
+            width: 85%;
+
+            height: 1px;
+
+            background: #444;
+
+            margin: auto;
+
+            position: relative;
+
+            z-index: 3;
+
+        }
+
+
+        /* =====================================================
+           TÍTULO
+        ===================================================== */
+
+        .titulo-area {
+
+            width: 92%;
+
+            max-width: 1250px;
+
+            margin: 70px auto 65px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 30px;
+
+            position: relative;
+
+            z-index: 3;
+
+        }
+
+
+        .titulo-area .linha {
+
+            height: 1px;
+
+            background: #555;
+
+            flex: 1;
+
+        }
+
+
+        .titulo-area h1 {
+
+            font-size: 65px;
+
+            font-weight: normal;
+
+            font-style: italic;
+
+            white-space: nowrap;
+
+        }
+
+
+        /* =====================================================
+           ÁREA DOS CARDS
+        ===================================================== */
+
+        .cards-area {
+
+            width: 92%;
+
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 35px;
+
+            position: relative;
+
+            z-index: 3;
+
+        }
+
+
+        /* =====================================================
+           CARDS
+        ===================================================== */
+
+        .card-academico {
+
+            background: #080808;
+
+            border: 1px solid #555;
+
+            border-radius: 30px;
+
+            padding: 45px;
+
+            min-height: 520px;
+
+            text-align: center;
+
+            transition: 0.3s;
+
+            box-shadow: 0 0 30px rgba(255,255,255,0.03);
+
+        }
+
+
+        .card-academico:hover {
+
+            transform: translateY(-8px);
+
+            border-color: white;
+
+        }
+
+
+        /* =====================================================
+           ENFEITE DO TOPO DO CARD
+        ===================================================== */
+
+        .mini-topo {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .mini-topo img {
+
+            width: 75px;
+
+        }
+
+
+        /* =====================================================
+           TÍTULO DO CARD
+        ===================================================== */
+
+        .card-academico h2 {
+
+            font-size: 38px;
+
+            font-weight: normal;
+
+            font-style: italic;
+
+            margin-bottom: 35px;
+
+        }
+
+
+        /* =====================================================
+           CONTEÚDO
+        ===================================================== */
+
+        .conteudo-card {
+
+            text-align: left;
+
+        }
+
+
+        .conteudo-card p {
+
+            color: #d7d7d7;
+
+            font-size: 18px;
+
+            line-height: 1.9;
+
+            margin-bottom: 28px;
+
+        }
+
+
+        /* =====================================================
+           BOTÃO VOLTAR
+        ===================================================== */
+
+        .voltar {
+
+            display: block;
+
+            width: fit-content;
+
+            margin: 55px auto 0;
+
+            padding: 14px 30px;
+
+            border: 1px solid #555;
+
+            border-radius: 30px;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            font-size: 12px;
+
+            letter-spacing: 2px;
+
+            transition: 0.3s;
+
+            position: relative;
+
+            z-index: 4;
+
+        }
+
+
+        .voltar:hover {
+
+            background: white;
+
+            color: black;
+
+            border-color: white;
+
+        }
+
+
+        /* =====================================================
+           RODAPÉ
+        ===================================================== */
+
+        footer {
+
+            text-align: center;
+
+            padding: 60px 20px 20px;
+
+            position: relative;
+
+            z-index: 3;
+
+        }
+
+
+        footer img {
+
+            width: 55px;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        footer p {
+
+            color: #888;
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            font-size: 11px;
+
+            letter-spacing: 2px;
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVO
+        ===================================================== */
+
+        @media (max-width: 900px) {
+
+            nav ul {
+
+                gap: 30px;
+
+            }
+
+
+            .titulo-area h1 {
+
+                font-size: 50px;
+
+            }
+
+
+            .cards-area {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .card-academico {
+
+                min-height: auto;
+
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .academico-container {
+
+                padding-left: 12px;
+
+                padding-right: 12px;
+
+            }
+
+
+            nav ul {
+
+                gap: 20px;
+
+            }
+
+
+            nav a {
+
+                font-size: 10px;
+
+            }
+
+
+            .titulo-area {
+
+                width: 100%;
+
+                gap: 12px;
+
+                margin: 50px auto 40px;
+
+            }
+
+
+            .titulo-area h1 {
+
+                font-size: 34px;
+
+            }
+
+
+            .cards-area {
+
+                width: 100%;
+
+            }
+
+
+            .card-academico {
+
+                padding: 35px 25px;
+
+                border-radius: 25px;
+
+            }
+
+
+            .card-academico h2 {
+
+                font-size: 29px;
+
+            }
+
+
+            .conteudo-card p {
+
+                font-size: 15px;
+
+                line-height: 1.8;
+
+            }
+
+
+            .flor {
+
+                width: 170px;
+
+            }
+
+
+            .laco {
+
+                width: 65px;
+
+            }
+
+
+            .estrela {
+
+                width: 25px;
+
+            }
+
+        }
+
+
+        @media (max-width: 400px) {
+
+            .titulo-area h1 {
+
+                font-size: 28px;
+
+            }
+
+
+            .card-academico {
+
+                padding: 30px 20px;
+
+            }
+
+
+            .card-academico h2 {
+
+                font-size: 25px;
+
+            }
+
+
+            .conteudo-card p {
+
+                font-size: 14px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <section class="academico-container">
+
+
+        <!-- =================================================
+             ENFEITES
+        ================================================== -->
+
+        <img
+            src="img/image copy 4.png"
+            class="flor flor1"
+            alt="">
+
+
+        <img
+            src="img/image copy 3.png"
+            class="flor flor2"
+            alt="">
+
+
+        <img
+            src="img/image copy 3.png"
+            class="flor flor3"
+            alt="">
+
+
+        <img
+            src="img/image copy 2.png"
+            class="flor flor4"
+            alt="">
+
+
+        <img
+            src="img/image copy 5.png"
+            class="estrela estrela1"
+            alt="">
+
+
+        <img
+            src="img/image copy 5.png"
+            class="estrela estrela2"
+            alt="">
+
+
+        <img
+            src="img/image copy 4.png"
+            class="laco laco1"
+            alt="">
+
+
+        <img
+            src="img/image copy 2.png"
+            class="laco laco2"
+            alt="">
+
+
+
+        <!-- =================================================
+             MENU
+        ================================================== -->
+
+        <nav>
+
+            <ul>
+
+                <li>
+                    <a href="index.html">
+                        INÍCIO
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="sobre.mim.html">
+                        SOBRE MIM
+                    </a>
+                </li>
+
+
+                
+
+
+                <li>
+                    <a href="ppe.html">
+                        PPE
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="curriculo.html">
+                        CURRÍCULO
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="contact.html">
+                        CONTATO
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+        <div class="linha-topo"></div>
+
+
+
+        <!-- =================================================
+             TÍTULO
+        ================================================== -->
+
+        <div class="titulo-area">
+
+            <span class="linha"></span>
+
+            <h1>
+                Trajetória Acadêmica
+            </h1>
+
+            <span class="linha"></span>
+
+        </div>
+
+
+
+        <!-- =================================================
+             CARDS
+        ================================================== -->
+
+        <div class="cards-area">
+
+
+            <!-- =================================================
+                 FORMAÇÃO ACADÊMICA
+            ================================================== -->
+
+            <div class="card-academico">
+
+
+                <div class="mini-topo">
+
+                    <img
+                        src="img/image copy 4.png"
+                        alt="Laço">
+
+                </div>
+
+
+                <h2>
+                    Formação Acadêmica
+                </h2>
+
+
+                <div class="conteudo-card">
+
+
+                    <p>
+                        ✦ Curso Técnico em Informática para Internet —
+                        SENAI CFP Cândido Athayde.
+                    </p>
+
+
+                    <p>
+                        ✦ 3ª Série do Ensino Médio em andamento —
+                        SESI Wilma Catão Araújo,
+                        Picos - PI.
+                    </p>
+
+
+                    <p>
+                        ✦ Certificados em provas externas:
+                        OBA, OBMEP, OBR e Brasil.
+                    </p>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 EXPERIÊNCIAS ACADÊMICAS
+            ================================================== -->
+
+            <div class="card-academico">
+
+
+                <div class="mini-topo">
+
+                    <img
+                        src="img/image copy 4.png"
+                        alt="Laço">
+
+                </div>
+
+
+                <h2>
+                    Experiências Acadêmicas
+                </h2>
+
+
+                <div class="conteudo-card">
+
+
+                    <p>
+                        ✦ II Mostra Científica —
+                        Como a tecnologia pode auxiliar no aprendizado.
+                    </p>
+
+
+                    <p>
+                        ✦ III Mostra Científica —
+                        Sustentabilidade nas Cidades do Futuro.
+                    </p>
+
+
+                    <p>
+                        ✦ IV Mostra Científica —
+                        Escola Segura: Ambiente Educacional que acolhe,
+                        protege e impulsiona a aprendizagem.
+                    </p>
+
+
+                    <p>
+                        ✦ Participação no Desafio SENAI
+                        de Projetos Integradores.
+                    </p>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             VOLTAR
+        ================================================== -->
+
+        <a
+            href="index.html"
+            class="voltar">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            &nbsp; VOLTAR AO INÍCIO
+
+        </a>
+
+
+
+        <!-- =================================================
+             RODAPÉ
+        ================================================== -->
+
+        <footer>
+
+            <img
+                src="img/image copy 2.png"
+                alt="Laço">
+
+
+            <p>
+                PORTFÓLIO • JÉSSICA S. VELOSO
+            </p>
+
+        </footer>
+
+
+    </section>
+
+
+</body>
+
+</html>
