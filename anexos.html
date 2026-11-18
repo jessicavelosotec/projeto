@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anexos & Referências</title>
+    <!-- Fontes do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="anexos.css">
+</head>
+<body>
+
+<section class="academico-container">
+
+    <!-- Elementos Decorativos de Fundo -->
+    <img src="img/image copy 4.png" class="flor flor1" alt="Flor decorativa">
+    <img src="img/image copy 4.png" class="flor flor2" alt="Flor decorativa">
+    <img src="img/image copy 4.png" class="flor flor3" alt="Flor decorativa">
+    <img src="img/image copy 4.png" class="flor flor4" alt="Flor decorativa">
+
+    <img src="img/image copy 2.png" class="laco laco1" alt="Laço decorativo">
+    <img src="img/image copy 2.png" class="laco laco2" alt="Laço decorativo">
+
+    <img src="img/image copy 5.png" class="estrela estrela1" alt="Estrela decorativa">
+    <img src="img/image copy 5.png" class="estrela estrela2" alt="Estrela decorativa">
+
+    <!-- Título Principal da Página -->
+    <div class="titulo-area principal">
+        <span class="linha"></span>
+        <h1>Anexos & Referências</h1>
+        <span class="linha"></span>
+    </div>
+
+    <!-- Grelha com Layout em 2 Colunas -->
+    <div class="conteudo-grid">
+
+        <!-- COLUNA 1: ANEXOS (Fotos das Atividades) -->
+        <div class="coluna-secao">
+            <h2 class="subtitulo-coluna">Anexos</h2>
+            
+            <div class="cards-area">
+                <div class="card-academico">
+                    <img src="img/0000.png" class="atividade-img" alt="Livro na Caixa" onclick="abrirZoom(this)">
+                    <p class="legenda">Livro na Caixa</p>
+                </div>
+
+                <div class="card-academico">
+                    <img src="img/9999.png" class="atividade-img" alt="Projeto Técnico SENAI" onclick="abrirZoom(this)">
+                    <p class="legenda">Grandprix</p>
+                </div>
+                  <div class="card-academico">
+                    <img src="img/8888.png" class="atividade-img" alt="Trote: Lei maria da moda" onclick="abrirZoom(this)">
+                    <p class="legenda">Trote: Lei maria da moda</p>
+                </div>
+                  <div class="card-academico">
+                    <img src="img/7777.png" class="atividade-img" alt="Trote: Não vi o grupo" onclick="abrirZoom(this)">
+                    <p class="legenda">Trote: Não vi o grupo</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- COLUNA 2: REFERÊNCIAS (Sites Utilizados) -->
+        <div class="coluna-secao">
+            <h2 class="subtitulo-coluna">Referências</h2>
+
+            <div class="card-referencias-container">
+                <div class="item-ref">
+                    <h3>Canva</h3>
+                    <a href="https://www.canva.com" target="_blank">www.canva.com</a>
+                </div>
+
+                <div class="item-ref">
+                    <h3>Ferreto</h3>
+                    <a href="https://www.professorferretto.com.br/?https://www.professorferretto.com.br?utm_source=google-ads&utm_medium=search&utm_campaign=black-2026&utm_content=ad-geral-1&conversion=black-26&utm_term=ferretto&gad_source=1&gad_campaignid=21865842373&gbraid=0AAAAADLPCb9OzP8t2H3iaWoeTCqYWvGcf&gclid=CjwKCAiAkrbXBhB2EiwA2y1E3idkcdL9yr6S_-zjsz7OyzaJtX1O5OPQ0a0MRZ_k9cCGc6J2w1RO-hoCb5cQAvD_BwE" target="_blank">developer.mozilla.org</a>
+                </div>
+
+                <div class="item-ref">
+                    <h3>Sesi Educação</h3>
+                    <a href="https://www.sesieducacao.com.br/publico/index.php" target="_blank">www.sesieducação.com</a>
+                </div>
+                <div class="item-ref">
+                    <h3>Toda Matéria</h3>
+                    <a href="https://www.todamateria.com.br/" target="_blank">www.todamateria.com</a>
+                </div>
+                
+            </div>
+           
+        </div>
+
+    </div>
+
+</section>
+
+<!-- MODAL PARA ZOOM DAS IMAGENS -->
+<div id="modalZoom" class="modal-zoom">
+    <span class="fechar-modal" onclick="fecharZoom()">&times;</span>
+    <img class="imagem-modal" id="imgExpandida">
+    <div id="legendaModal" class="legenda-modal"></div>
+</div>
+
+<script>
+    function abrirZoom(elementoImg) {
+        var modal = document.getElementById("modalZoom");
+        var imgModal = document.getElementById("imgExpandida");
+        var legenda = document.getElementById("legendaModal");
+
+        modal.style.display = "flex";
+        imgModal.src = elementoImg.src;
+        legenda.innerText = elementoImg.alt;
+    }
+
+    function fecharZoom() {
+        document.getElementById("modalZoom").style.display = "none";
+    }
+
+    // Fechar ao clicar fora da imagem
+    window.onclick = function(event) {
+        var modal = document.getElementById("modalZoom");
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>

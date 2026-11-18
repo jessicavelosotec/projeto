@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>C. Natureza</title>
-<link rel="stylesheet" href="natureza.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C. Natureza</title>
+    <link rel="stylesheet" href="natureza.css">
 </head>
-
 <body>
 
 <section class="academico-container">
@@ -30,7 +28,6 @@
     </div>
 
     <div class="cards-area">
-
         <div class="card-academico">
             <a href="https://www.canva.com/design/DAHDxBSvGh4/zDA44ZfQDwfVUT6650XLiw/edit" target="_blank">
                 <img src="img/eixo 1 naturezaa.png" class="atividade-img">
@@ -54,7 +51,6 @@
                 <img src="img/eixo 4 natureza.png" class="atividade-img">
             </a>
         </div>
-
     </div>
 
     <div class="titulo-area escolhidas">
@@ -63,16 +59,57 @@
         <span class="linha"></span>
     </div>
 
-   <div class="cards-escolhidas">
+    <div class="carrossel-wrapper">
+        <div class="carrossel-container">
+            <button class="seta-carrossel" onclick="mudarSlide(-1)">&#10094;</button>
 
-        <div class="card-academico destaque">
-            <a href="https://www.canva.com/design/DAHV3HGGE2U/M3w2J5ThJE30r5w5n_DXWA/edit" target="_blank">
-                <img src="img/natu.png" class="atividade-img">
-            </a>
+            <div class="carrossel-slides">
+                <!-- INDEX 0: EIXO 1 -->
+                <div class="card-academico destaque slide-item ativo">
+                    <a href="https://www.canva.com/design/DAHV3HGGE2U/M3w2J5ThJE30r5w5n_DXWA/edit" target="_blank">
+                        <img src="img/natu.png" class="atividade-img">
+                    </a>
+                    <p class="legenda-eixo">Eixo 1</p>
+                </div>
+
+                <!-- INDEX 1: EIXO 2 -->
+                <div class="card-academico destaque slide-item">
+                    <a href="LINK_DO_CANVA_EIXO_2" target="_blank">
+                        <img src="img/eixo 2 natureza.png" class="atividade-img">
+                    </a>
+                    <p class="legenda-eixo">Eixo 2</p>
+                </div>
+
+                <!-- INDEX 2: EIXO 3 -->
+                <div class="card-academico destaque slide-item">
+                    <a href="LINK_DO_CANVA_EIXO_3" target="_blank">
+                        <img src="img/eixo 3 natureza.png" class="atividade-img">
+                    </a>
+                    <p class="legenda-eixo">Eixo 3</p>
+                </div>
+
+                <!-- INDEX 3: EIXO 4 -->
+                <div class="card-academico destaque slide-item">
+                    <a href="LINK_DO_CANVA_EIXO_4" target="_blank">
+                        <img src="img/eixo 4 natureza.png" class="atividade-img">
+                    </a>
+                    <p class="legenda-eixo">Eixo 4</p>
+                </div>
+            </div>
+
+            <button class="seta-carrossel" onclick="mudarSlide(1)">&#10095;</button>
         </div>
 
+        <div class="indicadores-carrossel">
+            <span class="ponto-index ativo" onclick="irParaSlide(0)"></span>
+            <span class="ponto-index" onclick="irParaSlide(1)"></span>
+            <span class="ponto-index" onclick="irParaSlide(2)"></span>
+            <span class="ponto-index" onclick="irParaSlide(3)"></span>
+        </div>
+    </div>
 
 </section>
 
+<script src="carrossel.js"></script>
 </body>
 </html>
