@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>C. Natureza</title>
     <link rel="stylesheet" href="natureza.css">
+    <link rel="stylesheet" href="voltar.css">
 </head>
 <body>
 
@@ -66,33 +67,25 @@
             <div class="carrossel-slides">
                 <!-- INDEX 0: EIXO 1 -->
                 <div class="card-academico destaque slide-item ativo">
-                    <a href="https://www.canva.com/design/DAHV3HGGE2U/M3w2J5ThJE30r5w5n_DXWA/edit" target="_blank">
-                        <img src="img/natu.png" class="atividade-img">
-                    </a>
+                    <img src="img/n.png" class="atividade-img" onclick="abrirZoom(this.src)">
                     <p class="legenda-eixo">Eixo 1</p>
                 </div>
 
                 <!-- INDEX 1: EIXO 2 -->
                 <div class="card-academico destaque slide-item">
-                    <a href="LINK_DO_CANVA_EIXO_2" target="_blank">
-                        <img src="img/eixo 2 natureza.png" class="atividade-img">
-                    </a>
+                    <img src="img/nn.png" class="atividade-img" onclick="abrirZoom(this.src)">
                     <p class="legenda-eixo">Eixo 2</p>
                 </div>
 
                 <!-- INDEX 2: EIXO 3 -->
                 <div class="card-academico destaque slide-item">
-                    <a href="LINK_DO_CANVA_EIXO_3" target="_blank">
-                        <img src="img/eixo 3 natureza.png" class="atividade-img">
-                    </a>
+                    <img src="img/nnn.png" class="atividade-img" onclick="abrirZoom(this.src)">
                     <p class="legenda-eixo">Eixo 3</p>
                 </div>
 
                 <!-- INDEX 3: EIXO 4 -->
                 <div class="card-academico destaque slide-item">
-                    <a href="LINK_DO_CANVA_EIXO_4" target="_blank">
-                        <img src="img/eixo 4 natureza.png" class="atividade-img">
-                    </a>
+                    <img src="img/nnnn.png" class="atividade-img" onclick="abrirZoom(this.src)">
                     <p class="legenda-eixo">Eixo 4</p>
                 </div>
             </div>
@@ -108,7 +101,17 @@
         </div>
     </div>
 
+    <!-- BOTÃO VOLTAR AO INÍCIO -->
+    <div class="area-voltar">
+        <a href="portfolio.html" class="btn-voltar-inicio">&#8592; Voltar ao Início</a>
+    </div>
+
 </section>
+
+<div id="modalZoom" class="modal-zoom" onclick="fecharZoom()">
+    <button class="fechar-zoom" onclick="fecharZoom()">&#10005;</button>
+    <img id="imgZoom" class="img-ampliada" onclick="event.stopPropagation()">
+</div>
 
 <script src="carrossel.js"></script>
 </body>

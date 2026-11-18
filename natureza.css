@@ -76,6 +76,7 @@ body{
     border:1px solid rgba(255,255,255,.15);
     transition:.4s;
     display:block;
+    cursor:zoom-in;
 }
 
 .atividade-img:hover{
@@ -202,6 +203,63 @@ body{
     box-shadow:0 0 12px rgba(255, 255, 255, 0.8);
 }
 
+/* --- ZOOM DA IMAGEM (MODAL) --- */
+.modal-zoom{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0, 0, 0, 0.92);
+    backdrop-filter:blur(10px);
+    z-index:9999;
+    justify-content:center;
+    align-items:center;
+    padding:40px;
+}
+
+.modal-zoom.aberto{
+    display:flex;
+    animation:fadeModal 0.25s ease;
+}
+
+@keyframes fadeModal{
+    from{ opacity:0; }
+    to{ opacity:1; }
+}
+
+.img-ampliada{
+    max-width:90%;
+    max-height:88vh;
+    border-radius:18px;
+    border:1px solid rgba(255, 255, 255, 0.25);
+    box-shadow:0 0 40px rgba(255, 255, 255, 0.15);
+    object-fit:contain;
+}
+
+.fechar-zoom{
+    position:fixed;
+    top:28px;
+    right:36px;
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    background:rgba(255, 255, 255, 0.1);
+    border:1px solid rgba(255, 255, 255, 0.35);
+    color:#fff;
+    font-size:24px;
+    font-family:'Poppins', sans-serif;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:0.3s;
+    z-index:10000;
+}
+
+.fechar-zoom:hover{
+    background:rgba(255, 255, 255, 0.28);
+    transform:scale(1.1) rotate(90deg);
+}
+
 /* --- ELEMENTOS DECORATIVOS --- */
 .flor{
     position:absolute;
@@ -249,4 +307,5 @@ body{
     .carrossel-container{ gap:12px; }
     .carrossel-slides{ width:100%; }
     .seta-carrossel{ width:40px; height:40px; font-size:16px; }
+    .fechar-zoom{ top:16px; right:16px; width:40px; height:40px; font-size:20px; }
 }

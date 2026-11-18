@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Considerações Finais • Portfólio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="voltar.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000000;
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .consideracoes-container {
+            min-height: 100vh;
+            padding: 80px 8% 60px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* TÍTULO */
+        .titulo-area {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .titulo-area h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 62px;
+            font-weight: 500;
+            color: #ffe9f2;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        .linha {
+            width: 120px;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* CARD PRINCIPAL */
+        .card-consideracoes {
+            width: 100%;
+            max-width: 850px;
+            margin: 0 auto 40px;
+            padding: 55px 60px;
+            border-radius: 35px;
+            background: rgba(15, 15, 15, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(255, 233, 242, 0.04);
+            transition: 0.4s;
+        }
+
+        .card-consideracoes:hover {
+            border-color: rgba(255, 233, 242, 0.28);
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.8), 0 0 35px rgba(255, 233, 242, 0.08);
+        }
+
+        .topo-laco {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .topo-laco img {
+            width: 55px;
+            opacity: 0.9;
+        }
+
+        .card-consideracoes p {
+            font-size: 15.5px;
+            line-height: 1.9;
+            color: rgba(255, 255, 255, 0.88);
+            text-align: justify;
+            margin-bottom: 22px;
+            font-weight: 300;
+        }
+
+        .card-consideracoes p strong {
+            color: #ffe9f2;
+            font-weight: 500;
+        }
+
+        /* ASSINATURA */
+        .assinatura {
+            margin-top: 38px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            text-align: right;
+        }
+
+        .assinatura span {
+            font-size: 13px;
+            color: #bdbdbd;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .assinatura strong {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 500;
+            font-style: italic;
+            color: #ffe9f2;
+        }
+
+        /* ELEMENTOS DECORATIVOS */
+        .flor {
+            position: absolute;
+            width: 230px;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .flor1 { top: 40px; left: -40px; }
+        .flor2 { top: 40px; right: -40px; }
+        .flor3 { bottom: 40px; left: -40px; }
+        .flor4 { bottom: 40px; right: -40px; }
+
+        .estrela {
+            position: absolute;
+            width: 40px;
+            pointer-events: none;
+            z-index: 1;
+            animation: brilho 3s infinite ease-in-out;
+        }
+
+        .estrela1 { top: 180px; left: 16%; }
+        .estrela2 { bottom: 180px; right: 16%; }
+
+        .laco {
+            position: absolute;
+            width: 85px;
+            opacity: 0.85;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .laco1 { top: 240px; right: 10%; }
+        .laco2 { bottom: 220px; left: 10%; }
+
+        @keyframes brilho {
+            0%   { opacity: 0.4; transform: scale(1); }
+            50%  { opacity: 1.0; transform: scale(1.2); }
+            100% { opacity: 0.4; transform: scale(1); }
+        }
+
+        /* RESPONSIVO */
+        @media (max-width: 768px) {
+            .titulo-area h1 {
+                font-size: 42px;
+            }
+
+            .linha {
+                display: none;
+            }
+
+            .card-consideracoes {
+                padding: 35px 25px;
+            }
+
+            .card-consideracoes p {
+                font-size: 14.5px;
+                text-align: left;
+            }
+
+            .assinatura strong {
+                font-size: 24px;
+            }
+
+            .flor, .laco, .estrela {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="consideracoes-container">
+
+        <!-- Elementos Decorativos -->
+        <img src="img/image copy 4.png" class="flor flor1" alt="">
+        <img src="img/image copy 4.png" class="flor flor2" alt="">
+        <img src="img/image copy 4.png" class="flor flor3" alt="">
+        <img src="img/image copy 4.png" class="flor flor4" alt="">
+
+        <img src="img/image copy 5.png" class="estrela estrela1" alt="">
+        <img src="img/image copy 5.png" class="estrela estrela2" alt="">
+
+        <img src="img/image copy 2.png" class="laco laco1" alt="">
+        <img src="img/image copy 2.png" class="laco laco2" alt="">
+
+        <!-- Título -->
+        <div class="titulo-area">
+            <span class="linha"></span>
+            <h1>Considerações Finais</h1>
+            <span class="linha"></span>
+        </div>
+
+        <!-- Card com o Texto Completo -->
+        <div class="card-consideracoes">
+            <div class="topo-laco">
+                <img src="img/image copy 2.png" alt="Laço decorativo">
+            </div>
+
+            <p>
+                A construção deste portfólio representa a síntese de uma jornada transformadora ao longo do Ensino Médio no <strong>SESI Wilma Catão Araújo</strong>, integrado ao curso <strong>Técnico em Informática para Internet no SENAI CFP Cândido Athayde</strong>. Reunir aqui as produções desenvolvidas nas áreas de <strong>Linguagens, Ciências Humanas, Ciências da Natureza, Matemática</strong> e na formação técnica permitiu enxergar como cada eixo do conhecimento se conecta para formar uma visão crítica, criativa e preparada para os desafios do mundo contemporâneo.
+            </p>
+
+            <p>
+                Mais do que registros acadêmicos, cada atividade selecionada — desde os projetos em sala de aula, o <strong>Livro na Caixa</strong> e os trotes temáticos até a participação nas olimpíadas do conhecimento (<strong>OBA, OBMEP e OBR</strong>), no <strong>Grandprix</strong> e nas edições da <strong>Mostra Científica</strong> voltadas à tecnologia, sustentabilidade, acolhimento escolar e inovação industrial — reflete meu amadurecimento pessoal e coletivo. Essas vivências fortaleceram habilidades essenciais como trabalho em equipe, escuta ativa, empatia, organização e a capacidade de transformar ideias em soluções digitais e sociais relevantes.
+            </p>
+
+            <p>
+                Encerro este ciclo com profundo sentimento de realização e gratidão a todos os professores, colegas e familiares que caminharam ao meu lado e incentivaram cada conquista. Levo comigo não apenas o domínio das ferramentas tecnológicas e o gosto pela pesquisa, mas a certeza de que o aprendizado contínuo é o caminho para construir um futuro universitário e profissional pautado pela ética, inovação e impacto positivo na sociedade.
+            </p>
+
+            <div class="assinatura">
+                <span>Com carinho e gratidão,</span>
+                <strong>Jéssica da Silva Veloso</strong>
+            </div>
+        </div>
+
+        <!-- Botão Voltar ao Início -->
+        <div class="area-voltar">
+            <a href="portfolio.html" class="btn-voltar-inicio">&#8592; Voltar ao Início</a>
+        </div>
+
+    </section>
+
+</body>
+</html>
